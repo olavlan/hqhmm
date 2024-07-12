@@ -1,3 +1,3 @@
 # high-quality heightmap meshing
 
-12/07: [First tests]({% link first_tests.html %})
+12/07: [First tests]({% link hqhmm/first_tests.html %})
