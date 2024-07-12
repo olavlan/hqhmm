@@ -1,4 +1,4 @@
-name: Convert ipynb files to html to published on Github pages
+name: convert ipynb files to html ann push to gh-pages branch
 
 on: push
 
