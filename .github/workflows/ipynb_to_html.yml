@@ -1,0 +1,37 @@
+name: Convert ipynb files to html to published on Github pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install nbconvert
+        run: pip install nbconvert
+
+      - name: Convert all ipynb files to html
+        run: |
+<<<<<<< HEAD
+          mkdir -p html
+          find . -name '*.ipynb' -type f -exec jupyter nbconvert --template classic --to html --output-dir html {} \;
+=======
+          mkdir -p examples
+          find . -name '*.ipynb' -type f -exec jupyter nbconvert --template classic --to html --output-dir examples {} \;
+      - name: Pull latest changes
+        run: git pull origin gh-pages
+>>>>>>> 44cc881fee93b0735adc402803c510589e227fc6
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add html
+          git commit -m "convert notebooks to html"
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
