@@ -1,0 +1,32 @@
+name: build github pages content
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install nbconvert
+        run: pip install nbconvert
+
+      - name: convert all ipynb files to html
+        run: |
+          mkdir -p html
+          move public/* html
+          find . -name '*.ipynb' -type f -exec jupyter nbconvert --template classic --to html --output-dir html {} \;
+
+      - name: commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add html
+          git commit -m "github pages content"
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
