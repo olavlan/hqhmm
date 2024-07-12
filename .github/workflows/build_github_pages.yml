@@ -15,7 +15,7 @@ jobs:
       - name: convert all ipynb files to html
         run: |
           mkdir -p html
-          move public/* html
+          mv public/* html
           find . -name '*.ipynb' -type f -exec jupyter nbconvert --template classic --to html --output-dir html {} \;
 
       - name: commit changes
