@@ -1,3 +1,4 @@
 *.png
 *.stl
 .env/
+**/.ipynb_checkpoints/
