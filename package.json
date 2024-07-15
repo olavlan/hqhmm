@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "flask --app hqhmm run --port 5001 --debug",
+    "build": "./build.sh"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "bulma": "^1.0.1",
+    "delatin": "^0.2.0",
+    "htmx.org": "^2.0.1",
+    "three": "^0.166.1"
+  }
+}

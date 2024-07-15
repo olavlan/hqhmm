@@ -2,8 +2,6 @@
 *.stl
 .env/
 **/.ipynb_checkpoints/
-package-lock.json
-package.json
 node_modules
 hqhmm/static/script
 hqhmm/static/style
