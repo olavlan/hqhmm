@@ -8,3 +8,4 @@ node_modules
 hqhmm/static/script
 hqhmm/static/style
 *.pyc
+db/
