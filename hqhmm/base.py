@@ -1,6 +1,18 @@
-from flask import Blueprint, render_template, current_app, request, redirect
+from flask import (
+    Blueprint,
+    render_template,
+    current_app,
+    request,
+    redirect,
+    send_from_directory,
+)
 
 base = Blueprint("base", __name__)
+
+
+@base.route("/uploads/<filename>")
+def download_file(filename):
+    return send_from_directory(current_app.config["DATABASE_PATH"], filename)
 
 
 @base.post("/set_theme")

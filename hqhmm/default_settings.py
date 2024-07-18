@@ -1,2 +1,2 @@
 SECRET_KEY = "hqhmm"
-DATABASE_PATH = "db"
+DATABASE_PATH = "/home/jobb/Repositories/hqhmm/db"
