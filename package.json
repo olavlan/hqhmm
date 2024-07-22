@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "flask --app hqhmm run --port 5001 --debug",
+    "start": "flask run --port 5001 --debug",
     "build": "./build.sh"
   },
   "dependencies": {

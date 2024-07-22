@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="field">
+        <div class="file">
+            <label class="file-label">
+                <input class="file-input"
+                       type="file"
+                       name="heightmap"
+                       hx-on:change="getInputFile(this)"
+                       hx-on />
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">Choose an image file for heightmap…</span>
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="inverted" value="0" checked />
+                Normal
+            </label>
+            <label class="radio">
+                <input type="radio" name="inverted" value="1" />
+                Inverted
+            </label>
+        </div>
+    </div>
+    <div class="field has-addons">
+        <p class="control">
+            <input class="input"
+                   type="text"
+                   id="displacement"
+                   name="displacement"
+                   size="1"
+                   value="10">
+        </p>
+        <p class="control">
+            <a class="button is-static">% displacement (relative to image width)</a>
+        </p>
+    </div>
+    <div class="field has-addons">
+        <p class="control">
+            <input class="input" type="text" id="size" name="size" size="1" value="10">
+        </p>
+        <p class="control">
+            <a class="button is-static">% of maximum size</a>
+        </p>
+    </div>
+    <div class="field has-addons">
+        <p class="control">
+            <button class="button" type="submit" hx-on:click="createSTL()">Create mesh (Javascript)</button>
+        </p>
+        <p class="control">
+            <button class="button" type="submit" hx-on:click="createSTL()">Create mesh (C)</button>
+        </p>
+    </div>
+    <div class="field" id="download-link" style="display: none">
+        <p class="control">
+            <a class="button is-primary">Download STL file</a>
+        </p>
+    </div>
+    <a class="button is-primary is-2"
+       id="download-link"
+       style="display: none">Download STL file</a>
+{% endblock content %}
