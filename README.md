@@ -17,7 +17,7 @@ A Flask app that helps transform heightmaps (as image files) to high quality tri
 
 <img src="public/docker-run.png" width="600" alt="Docker run">
 
-5. Click on <img src="public/arrow-up-right-from-square-solid.svg" height="1em"> to open the app:
+5. Click on <img src="public/arrow-up-right-from-square-solid.svg" style="height:1em;"> to open the app:
 
 <img src="public/docker-open.png" width="600" alt="Docker open">
 
