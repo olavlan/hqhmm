@@ -2,7 +2,7 @@
 
 A webapp that helps transform heightmaps (as image files) to high quality triangular meshes. Uses [delatin](https://github.com/mapbox/delatin) or [hmm](https://github.com/fogleman/hmm).
 
-## Easy installation
+## Installation
 
 1. Install Docker Desktop: https://www.docker.com/products/docker-desktop/
 2. Open Docker and search for _olavlan/hqhmm_ in the top search bar. Click _Pull_ on the first result. <details>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="" data-theme="{{ config['CUSTOM_THEME'] }}">
+  {% include 'layout_header.html' %}
+  <body hx-boost="true">
+    <div class="columns p-4">
+      <div class="column is-5">
+        {% block settings %}{% endblock %}
+      </div>
+      <div class="column">
+        {% block result %}{% endblock %}
+      </div>
+    </div>
+    {% include 'layout_footer.html' %}
+  </body>
+</html>

@@ -1,3 +1,96 @@
-{% extends 'layout.html' %}
-{% block content %}
-{% endblock content %}
+{% extends 'layout_basic.html' %}
+{% macro input_field(id, label, size=3, value="", addon = none) %}
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">{{ label }}:</label>
+        </div>
+        <div class="field-body">
+            <div class="field {{'has-addons' if addon}}">
+                <p class="control">
+                    <input name="{{ id }}"
+                           id="{{ id }}"
+                           class="input"
+                           type="text"
+                           value="{{ value }}"
+                           size="{{ size }}" />
+                </p>
+                {% if addon %}
+                    <p class="control">
+                        <a class="button is-static">{{ addon }}</a>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% block settings %}
+    <div class ="block">
+        <h1 class="title is-4">Heightmap file</h1>
+        <div class="field">
+            <div class="file">
+                <label class="file-label">
+                    <input class="file-input"
+                           type="file"
+                           name="heightmap"
+                           hx-on:change="getInputFile(this)"
+                           hx-on />
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">Upload heightmap as image file</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <label class="radio">
+                    <input type="radio" name="inverted" value="0" checked />
+                    Normal
+                </label>
+                <label class="radio">
+                    <input type="radio" name="inverted" value="1" />
+                    Inverted
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <h1 class="title is-4">Displacement</h1>
+        <h2 class="subtitle is-6">Specify absolute or relative displacement</h2>
+        {{ input_field('width', 'Width', addon="units") }}
+        {{ input_field('depth', 'Depth (absolute)', addon="units") }}
+        {{ input_field('rel-depth', 'Depth (relative)', addon="% of width") }}
+    </div>
+    <div class="block">
+        <h1 class="title is-4">File size</h1>
+        <h2 class="subtitle is-6">Specify absolute or relative size of the STL file</h2>
+        {{ input_field('size', 'Size (absolute)', addon="MB") }}
+        {{ input_field('rel_size', 'Size (relative)', addon="% of maximum size") }}
+    </div>
+    <div class="block">
+        <h1 class="title is-4">Other</h1>
+        {{ input_field('base', 'Base height', addon="% of width") }}
+    </div>
+{% endblock %}
+{% block result %}
+    <div class="block">
+        <div class="field has-addons">
+            <p class="control">
+                <button class="button" type="submit" hx-on:click="createSTL()">Create mesh (Javascript)</button>
+            </p>
+            <p class="control">
+                <button class="button" type="submit" hx-on:click="createSTL()">Create mesh (C)</button>
+            </p>
+        </div>
+        <div class="field" id="download-link" style="display: none">
+            <p class="control">
+                <a class="button is-primary">Download STL file</a>
+            </p>
+        </div>
+    </div>
+    <div class="block">
+        <img width="500" height="600" alt="">
+    </div>
+{% endblock %}
