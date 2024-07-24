@@ -10,7 +10,7 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-search.png" width="600" alt="Docker search">
    </details>
 
-3. Go to the _Images_ tab. On the row that says _olavlan/hqhmm_, click ▶. <details>
+3. Go to the _Images_ tab. On the row that says _olavlan/hqhmm_, click  ▶. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-image.png" width="600" alt="Docker image">
    </details>
@@ -27,11 +27,11 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
 
 To update to the newest version of the app: 
 
-1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, click on  <img src="public/ellipsis-vertical-solid.svg" style="vertical-align: text-bottom; height:1em;">  to show more options, and click *Pull*. <details>
+1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, show more options, and click *Pull*. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-update.png" width="600" alt="Docker open">
    </details>
-2. Go to the *Containers* tab. If you have a running container of the app, click <img src="public/ellipsis-vertical-solid.svg" style="vertical-align: text-bottom; height:1em;"> to show more options, and click *Restart*. If you don't have a running container, repeat steps 3-5 above. <details>
+2. Go to the *Containers* tab. If you have a running container of the app, show more options, and click *Restart*. If you don't have a running container, repeat steps 3-5 above. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-restart-container.png.png" width="600" alt="Docker open">
    </details>
