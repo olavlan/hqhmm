@@ -8,3 +8,4 @@ hqhmm/static/style
 *.pyc
 db/
 .vscode
+app/static/dist

@@ -6,9 +6,9 @@ RUN npm ci
 RUN npm run build
 
 FROM python:3
-WORKDIR /hqhmm
-COPY requirements.txt /hqhmm/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /hqhmm/requirements.txt
+WORKDIR /backend
+COPY requirements.txt /backend/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /backend/requirements.txt
 COPY ./app ./app
 COPY --from=frontend /frontend/app/static/dist ./app/static/dist
 EXPOSE 5002

@@ -4,6 +4,7 @@ import HeightmapMesh from "HeightmapMesh";
 import { STLExporter } from "STLExporter";
 
 let imageUrl = null;
+let displacement = 0.1;
 let size = 0.1;
 
 export async function showMesh(imageUrl) {
