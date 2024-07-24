@@ -25,9 +25,9 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
 
-# About Docker
+## About Docker
 
-* *Docker* will run in the background even if you close the dashboard. Look for the  <img src="public/docker-brands-solid.svg" style="height:1em;"> icon in your taskbar to reopen the dashboard or quit *Docker* completely.
+* Docker will run in the background even if you close the dashboard. Look for the  <img src="public/docker-brands-solid.svg" style="height:1em;"> icon in your taskbar to reopen the dashboard or quit Docker completely.
 * Go to the *Containers* tab to verify that the webapp is running. If not, you can restart it by clicking ▶. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-restart.png" width="600" alt="Docker open">
