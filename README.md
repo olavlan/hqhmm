@@ -5,12 +5,10 @@ A Flask app that helps transform heightmaps (as image files) to high quality tri
 ## Easy installation
 
 1. Install Docker Desktop: https://www.docker.com/products/docker-desktop/
-2. Open Docker and search for _olavlan/hqhmm_ in the top search bar. Click _Pull_ on the first result.
-
-   - <details>
-       <summary>Screenshot</summary>
-       <img src="public/docker-search.png" width="600" alt="Docker search">
-       </details>
+2. Open Docker and search for _olavlan/hqhmm_ in the top search bar. Click _Pull_ on the first result. <details>
+   <summary>Screenshot</summary>
+   <img src="public/docker-search.png" width="600" alt="Docker search">
+   </details>
 
 3. Go to the _Images_ tab and click ▶ on the row that says _olavlan/hqhmm_.
 
