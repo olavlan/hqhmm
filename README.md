@@ -25,4 +25,4 @@ A Flask app that helps transform heightmaps (as image files) to high quality tri
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
 
-To get the newest release of the app, repeat steps 2-4.
+6. To update to the newest release of the app, repeat steps 2-4.
