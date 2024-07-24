@@ -10,7 +10,7 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-search.png" width="600" alt="Docker search">
    </details>
 
-3. Go to the _Images_ tab. On the row that says _olavlan/hqhmm_, click  ▶. <details>
+3. Go to the _Images_ tab. Click  ▶ on the row that says _olavlan/hqhmm_. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-image.png" width="600" alt="Docker image">
    </details>
@@ -20,7 +20,7 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-run.png" width="600" alt="Docker run">
    </details>
 
-5. You can now open the app in your browser; go to the *Containers* tab, find the row that says _olavlan/hqhmm_, and click on the link under *Ports*. <details>
+5. You can now open the app in your browser; go to the *Containers* tab, find the row that says _olavlan/hqhmm_, and click on the link under *Port(s)*. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
