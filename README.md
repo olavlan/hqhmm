@@ -20,12 +20,12 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-run.png" width="600" alt="Docker run">
    </details>
 
-5. Click on <img src="public/arrow-up-right-from-square-solid.svg" style="height:1em;"> to open the app in your browser. <details>
+5. Click on <img src="public/arrow-up-right-from-square-solid.svg" style="vertical-align: text-bottom; height:1em;"> to open the app in your browser. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
 
-6. To update the app, go to the *Images* tab, find the row that says _olavlan/hqhmm_, click on <img src="public/ellipsis-vertical-solid.svg" style="height:1em;"> to show more options, and click *Pull*. <details>
+6. To update the app, go to the *Images* tab, find the row that says _olavlan/hqhmm_, click on <img src="public/ellipsis-vertical-solid.svg" style="vertical-align: text-bottom; height:1em;"> to show more options, and click *Pull*. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-update.png" width="600" alt="Docker open">
    </details>
