@@ -25,7 +25,7 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
 
-To update to the newest version of the app: 
+## Update to newest version
 
 1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, show more options, and click *Pull*. <details>
    <summary>Screenshot</summary>
