@@ -27,7 +27,7 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
 
 To update to the newest version of the app: 
 
-1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, click <img src="public/ellipsis-vertical-solid.svg" style="vertical-align: text-bottom; height:1em;"> to show more options, and click *Pull*. <details>
+1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, click on  <img src="public/ellipsis-vertical-solid.svg" style="vertical-align: text-bottom; height:1em;">  to show more options, and click *Pull*. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-update.png" width="600" alt="Docker open">
    </details>
