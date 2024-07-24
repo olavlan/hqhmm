@@ -10,7 +10,7 @@ A Flask app that helps transform heightmaps (as image files) to high quality tri
    <img src="public/docker-search.png" width="600" alt="Docker search">
    </details>
 
-3. Go to the _Images_ tab and click ▶ on the row that says _olavlan/hqhmm_. <details>
+3. Go to the _Images_ tab. On the row that says _olavlan/hqhmm_, click click ▶. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-image.png" width="600" alt="Docker image">
    </details>
@@ -20,7 +20,7 @@ A Flask app that helps transform heightmaps (as image files) to high quality tri
    <img src="public/docker-run.png" width="600" alt="Docker run">
    </details>
 
-5. Click on <img src="public/arrow-up-right-from-square-solid.svg" style="height:1em;"> to open the app. <details>
+5. Click on <img src="public/arrow-up-right-from-square-solid.svg" style="height:1em;"> to open the app in your browser. <details>
    <summary>Screenshot</summary>
    <img src="public/docker-open.png" width="600" alt="Docker open">
    </details>
