@@ -31,10 +31,8 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
    <summary>Screenshot</summary>
    <img src="public/docker-update.png" width="600" alt="Docker open">
    </details>
-2. Go to the *Containers* tab. If you have a running container of the app, show more options, and click *Restart*. If you don't have a running container, repeat steps 3-5 above. <details>
-   <summary>Screenshot</summary>
-   <img src="public/docker-restart-container.png" width="600" alt="Docker open">
-   </details>
+2. With the updated image, repeat steps 3-5 above.
+3. Recommended: delete old images and containers of the app.
 
 ## About Docker
 
