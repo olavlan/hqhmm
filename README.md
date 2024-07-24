@@ -27,12 +27,13 @@ A webapp that helps transform heightmaps (as image files) to high quality triang
 
 ## Update to newest version
 
-1. Go to the *Images* tab, find the row that says _olavlan/hqhmm_, show more options, and click *Pull*. <details>
+1. Delete existing images and containers of the app. <details>
    <summary>Screenshot</summary>
-   <img src="public/docker-update.png" width="600" alt="Docker open">
+   <img src="public/docker-delete1.png" width="600" alt="Docker delete image">
+   <img src="public/docker-delete2.png" width="600" alt="Docker delete container">
    </details>
-2. With the updated image, repeat steps 3-5 above.
-3. Recommended: delete old images and containers of the app.
+
+2. Repeat steps 2-5 above. 
 
 ## About Docker
 
