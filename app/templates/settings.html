@@ -1,0 +1,19 @@
+<div class ="block">
+    {{ title('Heightmap file', 'Upload heightmap as image file') }}
+    {% include 'input_file.html' %}
+</div>
+<div class="block">
+    {{ title('Displacement', 'Specify absolute or relative displacement/depth') }}
+    {{ input_field('width', 'Abs. width', addon="units") }}
+    {{ input_field('depth', 'Abs. depth', addon="units") }}
+    {{ input_field('rel-depth', 'Rel. depth', addon="% of width") }}
+</div>
+<div class="block">
+    {{ title('File size', 'Specify desired file size') }}
+    {{ input_field('size', 'Abs. size', addon="MB") }}
+    {{ input_field('rel_size', 'Rel. size', addon="% of maximum size") }}
+</div>
+<div class="block">
+    <h1 class="title is-4">Other</h1>
+    {{ input_field('base', 'Base box', value="0", addon="% of width") }}
+</div>

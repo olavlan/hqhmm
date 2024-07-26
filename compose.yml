@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5001:80"
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /backend/app

@@ -1,0 +1,15 @@
+<div class="block">
+    <div class="buttons">
+        <button id="create-mesh"
+                class="button {{ 'is-static' if not ready_to_create_mesh() }}"
+                type="submit"
+                hx-post="/create_mesh"
+                hx-target="#result">Create mesh</button>
+        {% block buttons %}
+        {% endblock buttons %}
+    </div>
+</div>
+<div id="visual" class="block">
+    {% block visual %}
+    {% endblock visual %}
+</div>

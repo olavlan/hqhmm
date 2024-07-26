@@ -1,0 +1,15 @@
+{% extends 'result.html' %}
+{% block buttons %}
+        <a href="/uploads/download/{{ filename_stl }}"
+           download="{{ filename_stl }}"
+           hx-boost="false"
+           class="button is-success">Download STL file</a>
+{% endblock buttons %}
+{% block visual %}
+        <iframe id="visual"
+                srcdoc="{{ scene_html|safe }}"
+                style="width:100%;
+                       height:500px;
+                       border:none">
+        </iframe>
+{% endblock visual %}

@@ -1,2 +1,3 @@
 SECRET_KEY = "hqhmm"
-DATABASE_PATH = "/home/jobb/Repositories/hqhmm/db"
+FILES_PATH = "/hqhmm/data"
+HEIGHTMAP_FILE = None
