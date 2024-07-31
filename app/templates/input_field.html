@@ -1,24 +1,20 @@
-{% macro input_field(id, label, size=3, value="", addon = none) %}
-    <div class="field is-horizontal">
-        <div class="field-label is-normal">
-            <label class="label">{{ label }}:</label>
-        </div>
-        <div class="field-body">
-            <div class="field {{'has-addons' if addon}}">
-                <p class="control">
-                    <input name="{{ id }}"
-                           id="{{ id }}"
-                           class="input"
-                           type="text"
-                           value="{{ value }}"
-                           size="{{ size }}" />
-                </p>
-                {% if addon %}
-                    <p class="control">
-                        <a class="button is-static">{{ addon }}</a>
-                    </p>
-                {% endif %}
-            </div>
-        </div>
+{% macro input_field(inp, size=3) %}
+    <div class="field">
+        <label class="label">{{ inp.label | capitalize }}:</label>
+        <p class="control">
+            <input name="{{ inp.name }}"
+                   id="{{ inp.name }}"
+                   class="input {{ 'is-danger' if not inp.is_valid }}"
+                   type="text"
+                   value="{{ request.form.get(inp.name, '') }}"
+                   size="{{ size }}"
+                   placeholder="{{ inp.placeholder }}"
+                   hx-post="/check_input"
+                   hx-trigger="keyup delay:200ms changed"
+                   hx-target="#settings"
+                   hx-include="#settings" />
+        </p>
+        {% if inp.unit %}<p class="help">{{ inp.unit }}</p>{% endif %}
+        {% if inp.msg %}<p class="help is-danger">{{ inp.msg }}</p>{% endif %}
     </div>
 {% endmacro %}

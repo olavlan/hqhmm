@@ -30,3 +30,13 @@ function toggleMediaDetails(element) {
   detailsElement = mediaContentElement.querySelector(".content > div");
   switchClass(detailsElement, "is-hidden", "is-inline");
 }
+
+function startMeshing(startButton) {
+  document.getElementById("visual").innerHTML = "";
+  document.getElementById("result-buttons").innerHTML = "";
+  startButton.classList.add("is-loading");
+}
+
+function finishMeshing(startButton) {
+  startButton.classList.remove("is-loading");
+}

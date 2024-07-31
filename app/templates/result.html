@@ -3,10 +3,18 @@
         <button id="create-mesh"
                 class="button {{ 'is-static' if not ready_to_create_mesh() }}"
                 type="submit"
+                hx-on::before-request="startMeshing(this)"
+                hx-on::after-request="endMeshing(this)"
                 hx-post="/create_mesh"
-                hx-target="#result">Create mesh</button>
-        {% block buttons %}
-        {% endblock buttons %}
+                hx-include="#settings"
+                hx-target="#result">
+            <span class="icon"><i class="fas fa-draw-polygon"></i></span>
+            <span>Create mesh</span>
+        </button>
+        <div id="result-buttons">
+            {% block buttons %}
+            {% endblock buttons %}
+        </div>
     </div>
 </div>
 <div id="visual" class="block">

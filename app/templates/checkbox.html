@@ -1,0 +1,11 @@
+{% macro checkbox(name, label, help=none) %}
+    <div class="field">
+        <div class="control">
+            <label class="checkbox">
+                <input type="checkbox" name="{{ name }}">
+                {{ label }}
+            </label>
+        </div>
+        {% if help %}<p class="help">{{ help }}</p>{% endif %}
+    </div>
+{% endmacro %}

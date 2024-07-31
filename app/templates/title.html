@@ -1,0 +1,4 @@
+{% macro title(title, subtitle=none) %}
+    <h1 class="title is-4">{{ title }}</h1>
+    {% if subtitle %}<h2 class="subtitle is-6">{{ subtitle }}</h2>{% endif %}
+{% endmacro %}

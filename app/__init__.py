@@ -13,10 +13,11 @@ def create_app(config_object=None):
 
     #     db.init()
 
-    files_path = app.config["FILES_PATH"]
-    os.makedirs(files_path, exist_ok=True)
+    from .base import get_files_path
 
-    # register blueprints
+    os.makedirs(get_files_path(app), exist_ok=True)
+
+    # register blueprint
     from .base import base as base
 
     app.register_blueprint(base)

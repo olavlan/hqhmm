@@ -10,25 +10,30 @@ from flask import (
 import os, subprocess, trimesh
 import trimesh.viewer
 import html
+from .models import MeshSettings, MeshForm
+from pydantic import ValidationError
+from PIL import Image
+
 
 base = Blueprint("base", __name__)
 
 
+def get_files_path(app=current_app):
+    return app.config["FILES_PATH"]
+
+
 @base.route("/uploads/<filename>")
 def get_file(filename):
-    return send_from_directory(current_app.config["FILES_PATH"], filename)
+    return send_from_directory(get_files_path(), filename)
 
 
-@base.route("/uploads/download/<filename>")
+@base.route("/download/<filename>")
 def download_file(filename):
-    return send_from_directory(
-        current_app.config["FILES_PATH"], filename, as_attachment=True
-    )
+    return send_from_directory(get_files_path(), filename, as_attachment=True)
 
 
 def get_full_filepath(filename):
-    path = current_app.config["FILES_PATH"]
-    filepath = os.path.join(path, filename)
+    filepath = os.path.join(get_files_path(), filename)
     return filepath
 
 
@@ -41,10 +46,14 @@ def change_extension(filepath, new_extension):
 def upload_file():
     file = request.files["heightmap"]
     current_app.config["HEIGHTMAP_FILE"] = file.filename
-    path = current_app.config["FILES_PATH"]
-    filepath = os.path.join(path, file.filename)
+
+    filepath = get_full_filepath(file.filename)
     if not os.path.exists(filepath):
         file.save(filepath)
+
+    with Image.open(file) as image:
+        current_app.config["HEIGHTMAP_SIZE"] = image.size
+
     return render_template("result_heightmap.html", filename=file.filename)
 
 
@@ -71,32 +80,66 @@ def load_mesh_scene(filename, show_edges=False):
     return scene, mesh
 
 
+def get_user_inputs():
+    form_data = request.form.to_dict()
+    user_inputs = {k: v for k, v in form_data.items() if v.strip()}
+    return user_inputs
+
+
+@base.post("/check_input")
+def check_input():
+    mesh_form = MeshForm()
+    user_inputs = get_user_inputs()
+
+    try:
+        mesh_settings = MeshSettings(**user_inputs)
+    except ValidationError as e:
+        for error in e.errors():
+            field_name = error["loc"][0]
+            input_field = getattr(mesh_form, field_name)
+            input_field.is_valid = False
+            input_field.msg = error["msg"]
+
+    return render_template("settings.html", mesh_form=mesh_form)
+
+
 @base.post("/create_mesh")
 def create_mesh():
     filename = current_app.config["HEIGHTMAP_FILE"]
     filename_stl = change_extension(filename, "stl")
     input = get_full_filepath(filename)
     output = get_full_filepath(filename_stl)
-    displacement = 200
-    num_vertices = 50000
-    base_height = 2
+
+    image_width, image_heigth = current_app.config["HEIGHTMAP_SIZE"]
+    inputs = {
+        "image_width": image_width,
+        "image_height": image_heigth,
+    }
+    user_inputs = get_user_inputs()
+
+    try:
+        mesh_settings = MeshSettings(**user_inputs, **inputs)
+    except:
+        mesh_settings = MeshSettings(**inputs)  # use default values
+
     cmd = [
         "hmm",
         input,
         output,
         "-z",
-        str(displacement),
-        "-p",
-        str(num_vertices),
+        mesh_settings.hmm_z(),
+        "-t",
+        mesh_settings.hmm_t(),
         "-b",
-        str(base_height),
+        mesh_settings.hmm_b(),
+        "-e",
+        "0.0000001",
     ]
-    result = subprocess.run(
-        cmd,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    cmd = cmd + mesh_settings.hmm_extra_options()
+
+    print(image_width)
+    print(" ".join(cmd))
+    result = subprocess.run(cmd, check=True, capture_output=True, text=True)
 
     scene, mesh = load_mesh_scene(output)
     scene_html = trimesh.viewer.notebook.scene_to_html(scene)
@@ -115,7 +158,7 @@ def set_theme():
 
 @base.get("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", mesh_form=MeshForm())
 
 
 @base.get("/new")

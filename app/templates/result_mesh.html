@@ -1,9 +1,14 @@
 {% extends 'result.html' %}
 {% block buttons %}
-        <a href="/uploads/download/{{ filename_stl }}"
+        <a href="/download/{{ filename_stl }}"
            download="{{ filename_stl }}"
            hx-boost="false"
-           class="button is-success">Download STL file</a>
+           class="button is-success">
+                <span class="icon is-small">
+                        <i class="fas fa-download"></i>
+                </span>
+                <span>Download STL file</span>
+        </a>
 {% endblock buttons %}
 {% block visual %}
         <iframe id="visual"
