@@ -1,6 +1,9 @@
 # High-Quality Heightmap Meshing
 
-A webapp that helps transform heightmaps (as image files) to high quality triangular meshes. Uses [delatin](https://github.com/mapbox/delatin) or [hmm](https://github.com/fogleman/hmm).
+A webapp that helps transform heightmaps (as image files) to high quality triangular meshes. 
+
+Uses [hmm](https://github.com/fogleman/hmm), an implementation of the meshing algorithm in the paper [Fast Polygonal Approximation of
+Terrains and Height Fields](http://mgarland.org/files/papers/scape.pdf).
 
 ## Installation
 
