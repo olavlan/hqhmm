@@ -14,7 +14,7 @@ class MeshSettings(BaseModel):
     depth: Optional[float] = Field(None, ge=0)
     rel_depth: Optional[float] = Field(0.05, ge=0)
     max_file_size_mb: Optional[float] = Field(20, ge=0)
-    rel_base_height: Optional[float] = Field(0.05, ge=0)
+    rel_base_height: Optional[float] = Field(0, ge=0)
 
     @field_validator("rel_depth", "rel_base_height", mode="before")
     def convert_percentage(cls, v):

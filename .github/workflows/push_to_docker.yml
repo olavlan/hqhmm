@@ -1,4 +1,4 @@
-name: build docker image and push to dockerhub
+name: push to dockerhub
 
 on:
   workflow_dispatch:
@@ -19,5 +19,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          platforms: linux/amd64,linux/arm64
           push: true
-          tags: olavlan/hqhmm
+          tags: olavlan/hqhmm:latest
