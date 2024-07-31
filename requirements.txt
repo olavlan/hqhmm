@@ -1,3 +1,3 @@
-flask
-trimesh[easy]
 pydantic
+flask
+trimesh
