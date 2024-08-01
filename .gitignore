@@ -4,10 +4,9 @@
 .env/
 **/.ipynb_checkpoints/
 node_modules
-hqhmm/static/script
-hqhmm/static/style
 *.pyc
-db/
 .vscode
 app/static/dist
 TODO
+hqhmm_instance_files
+private
